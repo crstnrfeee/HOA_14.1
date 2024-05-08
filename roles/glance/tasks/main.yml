@@ -1,0 +1,8 @@
+- name: Installation Glance
+  shell:  |
+    yum update --skip-broken
+    yum install epel-release
+    yum install python3 python3-jinja2 python3-psutil python3-setuptools hddtemp python3-pip lm_sensors
+    yum update --skip-broken
+    yum install glances
+  when: ansible_distribution == "CentOS"
